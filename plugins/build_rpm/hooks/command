@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-echo "--- Build RPM spec: ${BUILDKITE_PLIGIN_BUILDRPM_SPEC}"
+echo "--- Build RPM spec: ${BUILDKITE_PLIGIN_BUILD_RPM_SPEC}"
 
-command = "rpmdev-setuptree; rpmbuild -ba ${BUILDKITE_PLIGIN_BUILDRPM_SPEC}"
+command = "rpmdev-setuptree; rpmbuild -ba ${BUILDKITE_PLIGIN_BUILD_RPM_SPEC}"
 
 docker run -it --rm \
     --volume "" \

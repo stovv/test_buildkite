@@ -1,4 +1,4 @@
-name: BuildRPM
+name: Build_RPM
 description: Build RPM
 requirements:
   - docker
