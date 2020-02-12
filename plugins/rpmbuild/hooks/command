@@ -6,6 +6,4 @@ echo "--- Build RPM spec: ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
 
 command="rpmdev-setuptree; rpmbuild -ba ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
 
-docker run -it --rm \
-    --volume "" \
-    "rpmbuild/centos7" bash -c $command
+docker run -it --rm "rpmbuild/centos7" bash -c $command
