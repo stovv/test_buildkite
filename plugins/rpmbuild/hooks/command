@@ -3,6 +3,8 @@
 set -euo pipefail
 
 echo "--- Build RPM spec: ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
+ls -la
+pwd
 
 command="rpmbuild -ba ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
 
