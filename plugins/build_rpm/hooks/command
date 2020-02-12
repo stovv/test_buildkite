@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "--- Build RPM spec: ${BUILDKITE_PLIGIN_BUILDRPM_SPEC}"
+
+command = "rpmdev-setuptree; rpmbuild -ba ${BUILDKITE_PLIGIN_BUILDRPM_SPEC}"
+
+docker run -it --rm \
+    --volume "" \
+    "rpmbuild/centos7" bash -c $command

@@ -1,0 +1,13 @@
+name: BuildRPM
+description: Build RPM
+requirements:
+  - docker
+configurations:
+  properties:
+    spec:
+      type: string
+    output_folder:  
+      type: string
+  required: 
+    - spec
+		- output_folder
