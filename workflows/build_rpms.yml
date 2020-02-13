@@ -6,11 +6,6 @@ steps:
           packageId: 1337
           share: "${TMP}"
 
-  - label: ":Build RPM: Tests"
+
+  - command: dynamic/build_rpms.sh | buildkite-agent pipeline upload
     depends_on: "get_properties"
-    plugins:
-      - ./plugins/rpmbuild:
-          spec: "./hello_world.spec"
-          share: "${TMP}"
-    agents:
-      - "rpmbuild=true"
