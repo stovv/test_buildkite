@@ -13,4 +13,4 @@ steps:
           spec: "${BUILDKITE_BUILD_CHECKOUT_PATH}/hello_world.spec"
           share: "${TMP}"
     agents:
-      rpmbuild: "true"
+      - "rpmbuild=true"
