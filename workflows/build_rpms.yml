@@ -12,9 +12,6 @@ steps:
     plugins:
       - docker#v3.5.0:
           image: "ubuntu:latest"
-    env:
-      HTTP_PROXY: "http://proxy-chain.intel.com:911"
-      HTTPS_PROXY: "http://proxy-chain.intel.com:911"
     
   - wait
 
@@ -25,6 +22,3 @@ steps:
     plugins:
       - docker#v3.5.0:
           image: "ubuntu:latest"
-    env:
-      HTTP_PROXY: "http://proxy-chain.intel.com:911"
-      HTTPS_PROXY: "http://proxy-chain.intel.com:911"
