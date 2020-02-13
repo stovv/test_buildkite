@@ -10,7 +10,7 @@ steps:
     depends_on: "get_properties"
     plugins:
       - ./plugins/rpmbuild:
-          spec: "${BUILDKITE_BUILD_CHECKOUT_PATH}/hello_world.spec"
+          spec: "./hello_world.spec"
           share: "${TMP}"
     agents:
       - "rpmbuild=true"
