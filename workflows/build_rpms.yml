@@ -9,6 +9,9 @@ steps:
   - label: ":milky_way: Dynamic build RPMS"
     command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
     depends_on: "get_properties"
+    plugins:
+      - docker#v3.5.0:
+          image: "ubuntu:latest"
     
   - wait
 
@@ -16,3 +19,6 @@ steps:
     commands: 
       - "mkdir meta"
       - "echo {\"meta-data\": \"hello\"} meta/meta.json"
+    plugins:
+      - docker#v3.5.0:
+          image: "ubuntu:latest"
