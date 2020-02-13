@@ -1,13 +1,13 @@
 name: rpmbuild
 description: Build RPM
 requirements:
-  - docker
+  - rpmbuild
 configurations:
   properties:
     spec:
       type: string
-    output_folder:  
+    share:  
       type: string
   required: 
     - spec
-		- output_folder
+		- share

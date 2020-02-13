@@ -1,0 +1,11 @@
+name: Get Phoenix Properties
+description: Get Phoenix Properties
+configurations:
+  properties:
+    packageId:
+      type: int
+    share:
+      type: string
+  required: 
+    - packageId
+		- share

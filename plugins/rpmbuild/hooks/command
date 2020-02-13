@@ -6,6 +6,5 @@ echo "--- Build RPM spec: ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
 ls -la
 pwd
 
-command="rpmbuild -ba ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
+rpmbuild -ba ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}
 
-docker run -it --rm "rpmbuild/centos7" bash -c "${command}"

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "--- Phoenix: ${BUILDKITE_PLUGIN_PHX_GET_PROPS_PACKAGEID}"
+printenv
+ls -la
+pwd
