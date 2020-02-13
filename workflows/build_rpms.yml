@@ -6,6 +6,5 @@ steps:
           packageId: 1337
           share: "${TMP}"
 
-
-  - command: dynamic/build_rpms.sh | buildkite-agent pipeline upload
+  - command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
     depends_on: "get_properties"
