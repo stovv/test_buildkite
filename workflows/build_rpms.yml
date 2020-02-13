@@ -9,5 +9,5 @@ steps:
   - label: ":build: Dynamic build RPMS"
     commands: 
       - chmod 777 ./dynamic/build_rpms.sh
-      - bash -x ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
+      - bash ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
     depends_on: "get_properties"
