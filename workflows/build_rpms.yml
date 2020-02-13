@@ -5,8 +5,6 @@ steps:
       - ./plugins/phx_get_props:
           packageId: 1337
           share: "${TMP}"
-    env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: app
 
   - label: ":Build RPM: Tests"
     depends_on: "get_properties"
@@ -14,5 +12,5 @@ steps:
       - ./plugins/rpmbuild:
           spec: "${BUILDKITE_BUILD_CHECKOUT_PATH}/hello_world.spec"
           share: "${TMP}"
-    env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: app
+    agents:
+      rpmbuild: "true"
