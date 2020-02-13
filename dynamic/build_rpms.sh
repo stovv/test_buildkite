@@ -11,7 +11,7 @@ TMP="test"
 
 for rpmname in "${names[@]}"; do
   echo "
-  - label: \":build: Build RPM ${rpmname}\"
+  - label: \":box: Build RPM ${rpmname}\"
     key: \"build_rpm_${rpmname}\"
     plugins:
     - ./plugins/rpmbuild:

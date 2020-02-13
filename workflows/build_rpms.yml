@@ -1,12 +1,12 @@
 steps:
-  - label: ":build: Phoenix Get Properties"
+  - label: ":cloud: Phoenix Get Properties"
     key: "get_properties"
     plugins:
       - ./plugins/phx_get_props:
           packageId: 1337
           share: "${TMP}"
 
-  - label: ":build: Dynamic build RPMS"
+  - label: ":galaxy: Dynamic build RPMS"
     command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
     depends_on: "get_properties"
     
