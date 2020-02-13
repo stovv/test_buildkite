@@ -7,5 +7,5 @@ steps:
           share: "${TMP}"
 
   - label: ":build: Dynamic build RPMS"
-    command: bash ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
+    command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
     depends_on: "get_properties"
