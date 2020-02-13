@@ -1,5 +1,5 @@
 steps:
-  - label: ":Build RPM: Tests"
+  - label: ":Phoenix: Get Properties"
     key: "get_properties"
     plugins:
       - ./plugins/phx_get_props:
