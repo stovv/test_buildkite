@@ -13,8 +13,8 @@ steps:
       - docker#v3.5.0:
           image: "ubuntu:latest"
           environment: 
-            - "HTTP_PROXY=\"http://proxy-chain.intel.com:911\""
-            - "HTTPS_PROXY=\"http://proxy-chain.intel.com:911\""
+            HTTP_PROXY: "http://proxy-chain.intel.com:911"
+            HTTPS_PROXY: "http://proxy-chain.intel.com:911"
     
   - wait
 
