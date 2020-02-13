@@ -5,7 +5,6 @@ steps:
       - ./plugins/phx_get_props:
           packageId: 1337
           share: "${TMP}"
-    agents: "rpmbuild=true"
 
   - label: ":build: Dynamic build RPMS"
     command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload

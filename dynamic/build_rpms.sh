@@ -6,7 +6,7 @@ set -eu
 # begin the pipeline.yml file
 echo "steps:"
 
-names=($1 $2 $2)
+names=($1 $2 $3)
 TMP="test"
 
 for rpmname in "${names[@]}"; do
