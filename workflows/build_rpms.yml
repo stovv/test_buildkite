@@ -4,10 +4,10 @@ steps:
     plugins:
       - ./plugins/phx_get_props:
           packageId: $PHOENIX_PACKAGE_ID
-          share: "/tmp/$BUILDKITE_PIPELINE_ID"
+          share: "/tmp/$BUILDKITE_BUILD_ID"
 
   - label: ":milky_way: Dynamic build RPMS"
-    command: ./dynamic/build_rpms.sh /tmp/$BUILDKITE_PIPELINE_ID $PHOENIX_PACKAGE_ID.json | buildkite-agent pipeline upload
+    command: ./dynamic/build_rpms.sh /tmp/$BUILDKITE_BUILD_ID $PHOENIX_PACKAGE_ID.json | buildkite-agent pipeline upload
     depends_on: "get_properties"
     
   - wait
