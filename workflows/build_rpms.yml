@@ -3,8 +3,8 @@ steps:
     key: "get_properties"
     plugins:
       - ./plugins/phx_get_props:
-          packageId: 1337
-          share: "${TMP}"
+          packageId: $PHOENIX_PACKAGE_ID
+          share: "/tmp/$BUILDKITE_PIPELINE_ID"
 
   - label: ":milky_way: Dynamic build RPMS"
     command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload

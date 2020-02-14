@@ -2,7 +2,60 @@
 
 set -euo pipefail
 
+package="
+{
+    \"iteration\": {
+        \"id\": 1482,
+        \"name\": \"Beta upd. 4\",
+        \"phase\": {
+            \"id\": 657,
+            \"name\": \"Beta\",
+            \"letter\": \"b\"
+        },
+        \"frozen\": false
+    },
+    \"phase\": {
+        \"name\": \"Beta\"
+    },
+    \"version\": {
+        \"name\": \"2021.1\"
+    },
+    \"product\": {
+        \"name\": \"Intel\u00ae System Debugger\",
+        \"title\": \"Intel System Debugger\",
+        \"edition\": null
+    },
+    \"id\": 48685,
+    \"packageName\": \"l_oneapi_sys_dbg_b_2021.1.4.321\",
+    \"packageNumber\": 321,
+    \"packageTarget\": \"Test\",
+    \"versionAbbr\": \"oneapi_sys_dbg\",
+    \"versionName\": \"Intel\u00ae System Debugger - OneAPI\",
+    \"versionNumber\": \"2021.1\",
+    \"targetNumber\": 3,
+    \"hostOS\": \"Linux* Host\",
+    \"hostOSid\": 2,
+    \"hostOSAbbr\": \"l\",
+    \"scheduleId\": 20503,
+    \"updateNumber\": 4,
+    \"path\": \"l_oneapi_sys_dbg_b_2021.1/packages/l_oneapi_sys_dbg_b_2021.1.4.321\"
+    },
+    \"autocomplete_build\": \"False\",
+    \"w_aps_cfg_file\": \"w_sys_dbg\",
+    \"l_aps_cfg_file\": \"l_sys_dbg\",
+    \"wash_groups\": \"mslrepos nn_rep nn_rep_r\",
+    \"l_drop\": \"{latest}\",
+    \"w_drop\": \"{latest}\",
+    \"productName\": \"Intel\u00ae System Debugger\",
+    \"productDescription\": \"Intel\u00ae System Debugger\",
+    \"acceptance_tests\": \" \",
+    \"toolkit_integration\": \" \",
+    \"known_good\": \" \",
+    \"pv_product_name\": \"sysdbg\",
+}
+"
+
 echo "--- Phoenix: ${BUILDKITE_PLUGIN_PHX_GET_PROPS_PACKAGEID}"
-printenv
-ls -la
-pwd
+echo $package > "${BUILDKITE_PLUGIN_PHX_GET_PROPS_PACKAGEID}.json"
+
+mkdir -p "${BUILDKITE_PLUGIN_PHX_GET_PROPS_SHARE}" && cp "${BUILDKITE_PLUGIN_PHX_GET_PROPS_PACKAGEID}.json" "$_"
