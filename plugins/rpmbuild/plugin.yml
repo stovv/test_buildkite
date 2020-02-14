@@ -8,6 +8,9 @@ configurations:
       type: string
     share:  
       type: string
+    name:
+      type: string
   required: 
+    - name
     - spec
 		- share

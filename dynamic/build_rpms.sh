@@ -7,7 +7,7 @@ set -eu
 echo "steps:"
 
 phoenix_json="$1/$2"
-names=(rpm1 rpm2 rpm3)
+names=("rpm1" "rpm2" "rpm3")
 
 for rpmname in "${names[@]}"; do
   echo "
@@ -17,6 +17,7 @@ for rpmname in "${names[@]}"; do
     - ./plugins/rpmbuild:
         spec: \"./hello_world.spec\"
         share: \"${1}\"
+        name: \"${rpmname}\"
     agents:
       - \"rpmbuild=true\"
 

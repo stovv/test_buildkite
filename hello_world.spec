@@ -1,4 +1,4 @@
-Name:       hello-world
+Name:       %name%
 Version:    1
 Release:    1
 Summary:    Most simple RPM package
@@ -11,17 +11,17 @@ This is my first RPM package, which does nothing.
 # we have no source, so nothing here
 
 %build
-cat > hello-world.sh <<EOF
+cat > %name%.sh <<EOF
 #!/usr/bin/bash
 echo Hello world
 EOF
 
 %install
 mkdir -p %{buildroot}/usr/bin/
-install -m 755 hello-world.sh %{buildroot}/usr/bin/hello-world.sh
+install -m 755 %name%.sh %{buildroot}/usr/bin/%name%.sh
 
 %files
-/usr/bin/hello-world.sh
+/usr/bin/%name%.sh
 
 %changelog
 # let skip this for now
