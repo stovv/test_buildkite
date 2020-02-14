@@ -6,5 +6,5 @@ echo "--- Build RPM spec: ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}"
 ls -la
 pwd
 
-rpmbuild -ba ${BUILDKITE_PLUGIN_RPMBUILD_SPEC}
+rpmbuild -ba ${BUILDKITE_PLUGIN_RPMBUILD_SPEC} --define "_rpmdir ${BUILDKITE_PLUGIN_RPMBUILD_SHARE}"
 

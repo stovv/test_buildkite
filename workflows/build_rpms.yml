@@ -7,7 +7,7 @@ steps:
           share: "/tmp/$BUILDKITE_PIPELINE_ID"
 
   - label: ":milky_way: Dynamic build RPMS"
-    command: ./dynamic/build_rpms.sh rpm1 rpm2 rpm3 | buildkite-agent pipeline upload
+    command: ./dynamic/build_rpms.sh /tmp/$BUILDKITE_PIPELINE_ID $PHOENIX_PACKAGE_ID.json | buildkite-agent pipeline upload
     depends_on: "get_properties"
     
   - wait
@@ -15,7 +15,7 @@ steps:
   - label: ":yum: Generate meta data"
     commands: 
       - "mkdir meta"
-      - "echo {\"meta-data\": \"hello\"} meta/meta.json"
+      - "echo {\"meta-data\": \"hello\"} > meta/meta.json"
     plugins:
       - docker#v3.5.0:
           image: "ubuntu:latest"

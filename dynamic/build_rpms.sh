@@ -6,8 +6,8 @@ set -eu
 # begin the pipeline.yml file
 echo "steps:"
 
-names=($1 $2 $3)
-TMP="test"
+phoenix_json="$1/$2"
+names=(rpm1 rpm2 rpm3)
 
 for rpmname in "${names[@]}"; do
   echo "
@@ -16,7 +16,7 @@ for rpmname in "${names[@]}"; do
     plugins:
     - ./plugins/rpmbuild:
         spec: \"./hello_world.spec\"
-        share: \"test\"
+        share: \"${1}\"
     agents:
       - \"rpmbuild=true\"
 
